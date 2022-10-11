@@ -21,10 +21,13 @@
             <PasswordBox x:Name="passwordText" Background="LightGray" Grid.Row="1" Height="60" Width="360" VerticalContentAlignment="Center" FontSize="16" Padding="10,0"/>
         </StackPanel>
         <Button Grid.Row="2" Content="Acessar" Margin="120,500,120,60" Click="Button_Click" FontSize="16" Cursor="Hand"/>
-        <!--<Grid  x:Name="gridBG" Background="Black" Opacity="0.5" >
+        <Grid Visibility="Hidden" x:Name="gridBG" Background="Black" Opacity="0.5" >
         </Grid>
-        <Grid>
-            <Button x:Name="GridLogin" Content="Usuário autenticado!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Click_1"></Button>
-        </Grid>-->
+        <Grid Visibility="Hidden">
+            <Button x:Name="GridLoginSuccess" Content="Usuário autenticado!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Click_1"></Button>
+        </Grid>
+        <Grid Visibility="Hidden">
+            <Button x:Name="GridLoginFail" Content="Credenciais inválidas!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Click_1"></Button>
+        </Grid>
     </Grid>
 </Window>

@@ -28,6 +28,7 @@ namespace gabrielspetillo_d7_avaliacao.Data
             {
                 new UserData
                 {
+                    Id = 1,
                     Email = "admin@email.com",
                     Password = "admin123"
                 }

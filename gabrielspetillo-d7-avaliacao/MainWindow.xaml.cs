@@ -22,6 +22,7 @@ namespace gabrielspetillo_d7_avaliacao
     public partial class MainWindow : Window
     {
         private readonly Context context;
+        UserData user = new();
 
         public static Visibility gridBackground = Visibility.Hidden;
 
@@ -29,13 +30,20 @@ namespace gabrielspetillo_d7_avaliacao
         {
             this.context = context;
             InitializeComponent();
-            var userList = context.Users.ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            pass
-            
+            var userList = context.Users.ToList();
+            foreach (UserData userData in userList)
+            {
+                if(user.Email == userData.Email && user.Password == userData.Password)
+                {
+                    GridLoginSuccess.Visibility = Visibility.Visible;
+                    return;
+                }
+            }
+            GridLoginFail.Visibility = Visibility.Visible;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
