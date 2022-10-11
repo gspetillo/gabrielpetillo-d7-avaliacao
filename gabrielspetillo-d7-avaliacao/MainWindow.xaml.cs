@@ -32,12 +32,14 @@ namespace gabrielspetillo_d7_avaliacao
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Access(object sender, RoutedEventArgs e)
         {
+            GridBG.Visibility = Visibility.Visible;
+
             var userList = context.Users.ToList();
             foreach (UserData userData in userList)
             {
-                if(user.Email == userData.Email && user.Password == userData.Password)
+                if(userText.Text == userData.Email && passwordText.Password == userData.Password)
                 {
                     GridLoginSuccess.Visibility = Visibility.Visible;
                     return;
@@ -46,8 +48,16 @@ namespace gabrielspetillo_d7_avaliacao
             GridLoginFail.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Close_Success(object sender, RoutedEventArgs e)
         {
+            GridBG.Visibility = Visibility.Hidden;
+            GridLoginSuccess.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Close_Fail(object sender, RoutedEventArgs e)
+        {
+            GridBG.Visibility = Visibility.Hidden;
+            GridLoginFail.Visibility = Visibility.Hidden;
         }
     }
 }

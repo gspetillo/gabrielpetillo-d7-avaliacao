@@ -5,29 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gabrielspetillo_d7_avaliacao"
         mc:Ignorable="d"
-        Title="Login com WPF | gabrielspetillo-d7-avaliacao" Height="660" Width="480">
+        Title="Login com WPF | gabrielspetillo-d7-avaliacao" Height="660" Width="480"
+        Background="#1a284a">
     <Grid>
         <Label FontSize="18" 
                FontWeight="Bold"
                HorizontalAlignment="Center" 
                VerticalAlignment="Top" Margin="0,60,0,0" 
-               Grid.Row="0" Content="Autenticação de usuário" />
+               Grid.Row="0" Content="Autenticação de usuário"
+               Foreground="CadetBlue"/>
         <StackPanel Margin="60,120,60,60">
-            <Label Grid.Row="1" Grid.Column="0" Content="Usuário" FontSize="16" />
-            <TextBox x:Name="userText" Background="LightGray" Grid.Row="1" Height="60" Width="360" VerticalContentAlignment="Center" FontSize="16" Padding="10,0"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Usuário" FontSize="16" Foreground="CadetBlue"/>
+            <TextBox x:Name="userText" Background="CadetBlue" Foreground="White" Grid.Row="1" Height="60" Width="360" VerticalContentAlignment="Center" FontSize="16" Padding="10,0" />
         </StackPanel>
         <StackPanel Margin="60,240,60,60">
-            <Label Content="Senha" FontSize="16"/>
-            <PasswordBox x:Name="passwordText" Background="LightGray" Grid.Row="1" Height="60" Width="360" VerticalContentAlignment="Center" FontSize="16" Padding="10,0"/>
+            <Label Content="Senha" FontSize="16" Foreground="CadetBlue"/>
+            <PasswordBox x:Name="passwordText" Background="CadetBlue" Foreground="White" Grid.Row="1" Height="60" Width="360" VerticalContentAlignment="Center" FontSize="16" Padding="10,0" />
         </StackPanel>
-        <Button Grid.Row="2" Content="Acessar" Margin="120,500,120,60" Click="Button_Click" FontSize="16" Cursor="Hand"/>
-        <Grid Visibility="Hidden" x:Name="gridBG" Background="Black" Opacity="0.5" >
+        <Button Grid.Row="2" Content="Acessar" Margin="120,500,120,60" Click="Button_Access" FontSize="16" Cursor="Hand" Background="CadetBlue" Foreground="White"/>
+        <Grid Visibility="Hidden" x:Name="GridBG" Background="Black" Opacity="0.5" >
         </Grid>
-        <Grid Visibility="Hidden">
-            <Button x:Name="GridLoginSuccess" Content="Usuário autenticado!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Click_1"></Button>
+        <Grid x:Name="GridLoginSuccess" Visibility="Hidden">
+            <Button x:Name="ButtonLoginSuccess" Content="Usuário autenticado!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Close_Success"></Button>
         </Grid>
-        <Grid Visibility="Hidden">
-            <Button x:Name="GridLoginFail" Content="Credenciais inválidas!" Height="180" Width="300" FontSize="24" Background="White" Click="Button_Click_1"></Button>
+        <Grid x:Name="GridLoginFail" Visibility="Hidden">
+            <Button x:Name="ButtonLoginFail" Content="Credenciais inválidas!" Height="180" Width="300" FontSize="24" Click="Button_Close_Fail"></Button>
         </Grid>
     </Grid>
 </Window>
